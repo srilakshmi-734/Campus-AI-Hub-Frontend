@@ -1,7 +1,47 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Brain, ShieldCheck, GraduationCap, ArrowRight, Sparkles } from 'lucide-react';
+import {
+    Brain,
+    ShieldCheck,
+    GraduationCap,
+    ArrowRight,
+    Sparkles,
+    BarChart3,
+    MessageSquare,
+    CreditCard,
+    Calendar
+} from 'lucide-react';
+
+const stats = [
+    { value: "128K+", label: "Active Students" },
+    { value: "420+", label: "Partner Institutions" },
+    { value: "3.8M+", label: "Attendance Records Processed" },
+    { value: "99.4%", label: "Platform Uptime" },
+];
+
+const features = [
+    {
+        icon: MessageSquare,
+        title: "AI Academic Assistant",
+        desc: "Instant academic query resolution and intelligent student guidance."
+    },
+    {
+        icon: Calendar,
+        title: "Smart Attendance Tracking",
+        desc: "Automated attendance monitoring with predictive insights."
+    },
+    {
+        icon: CreditCard,
+        title: "Digital Fee Management",
+        desc: "Real-time fee tracking, reminders, and secure transactions."
+    },
+    {
+        icon: BarChart3,
+        title: "Performance Analytics",
+        desc: "Advanced dashboards with CGPA and academic trend analysis."
+    }
+];
 
 const roles = [
     {
@@ -34,87 +74,133 @@ export default function RoleSelectPage() {
         setTimeout(() => navigate(`/login?role=${roleId}`), 350);
     };
 
+    const scrollToRoles = () => {
+        document.getElementById("roles-section")?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
+        <div className="min-h-screen text-white relative overflow-hidden"
             style={{
-                background: 'radial-gradient(ellipse at top left, rgba(124,58,237,0.25) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(249,115,22,0.2) 0%, transparent 50%), linear-gradient(160deg, #07051a 0%, #110a2e 40%, #0d0820 100%)',
-            }}>
+                background:
+                    'radial-gradient(ellipse at top left, rgba(124,58,237,0.25) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(249,115,22,0.2) 0%, transparent 50%), linear-gradient(160deg, #07051a 0%, #110a2e 40%, #0d0820 100%)',
+            }}
+        >
 
-            {/* Animated background grid */}
-            <div className="absolute inset-0 opacity-10"
-                style={{
-                    backgroundImage: 'linear-gradient(rgba(124,58,237,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,0.3) 1px, transparent 1px)',
-                    backgroundSize: '60px 60px',
-                }} />
-
-            {/* Floating orbs */}
-            <motion.div
-                animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute top-20 left-20 w-48 h-48 rounded-full blur-3xl opacity-20"
-                style={{ background: 'radial-gradient(circle, #7c3aed, transparent)' }} />
-            <motion.div
-                animate={{ y: [20, -20, 20], x: [10, -10, 10] }}
-                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute bottom-20 right-20 w-64 h-64 rounded-full blur-3xl opacity-15"
-                style={{ background: 'radial-gradient(circle, #f97316, transparent)' }} />
-            <motion.div
-                animate={{ y: [-15, 15, -15] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute top-1/2 left-10 w-32 h-32 rounded-full blur-3xl opacity-10"
-                style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-
-            <div className="relative z-10 w-full max-w-4xl px-4 py-8">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: -30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: 'easeOut' }}
-                    className="text-center mb-12"
-                >
-                    {/* Logo */}
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <motion.div
-                            animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.05, 1] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                            className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl"
-                            style={{ background: 'linear-gradient(135deg, #7c3aed, #f97316)' }}
-                        >
-                            <Brain size={28} className="text-white" />
-                        </motion.div>
+            {/* HERO SECTION */}
+            <section className="pt-28 pb-24 px-6 text-center max-w-5xl mx-auto relative z-10">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                    <div className="flex justify-center mb-6">
+                        <div className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-xl"
+                            style={{ background: 'linear-gradient(135deg, #7c3aed, #f97316)' }}>
+                            <Brain size={32} />
+                        </div>
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
-                        Campus<span style={{
-                            background: 'linear-gradient(135deg, #a78bfa, #fb923c)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                        }}>AI</span> Hub
+                    <h1 className="text-5xl md:text-6xl font-black mb-6">
+                        The Intelligent Core of Modern Campus Management{" "}
+                        <span className="bg-gradient-to-r from-violet-400 to-orange-400 bg-clip-text text-transparent">
+                            AI Intelligence
+                        </span>
                     </h1>
-                    <p className="text-gray-400 text-base md:text-lg font-medium">
-                        AI-Powered Campus Management System
+
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+                        CampusAI Hub centralizes academic operations, attendance tracking,
+                        performance analytics, and financial management into one intelligent platform.
                     </p>
 
-                    <motion.div
-                        initial={{ opacity: 0, scaleX: 0 }}
-                        animate={{ opacity: 1, scaleX: 1 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                        className="mt-5 flex items-center justify-center gap-2"
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        onClick={scrollToRoles}
+                        className="px-8 py-4 rounded-2xl font-semibold"
+                        style={{ background: "linear-gradient(135deg, #7c3aed, #f97316)" }}
                     >
-                        <div className="h-px w-16" style={{ background: 'linear-gradient(to right, transparent, rgba(124,58,237,0.6))' }} />
-                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs text-violet-300 font-medium"
-                            style={{ border: '1px solid rgba(124,58,237,0.3)', background: 'rgba(124,58,237,0.1)' }}>
-                            <Sparkles size={11} />
-                            Choose your role to continue
-                        </div>
-                        <div className="h-px w-16" style={{ background: 'linear-gradient(to left, transparent, rgba(249,115,22,0.6))' }} />
-                    </motion.div>
+                        Get Started <ArrowRight size={18} className="inline ml-2" />
+                    </motion.button>
                 </motion.div>
+            </section>
 
-                {/* Role Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    {roles.map((role, i) => {
+            {/* STATS */}
+            <section className="py-20 px-6">
+                <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+                    {stats.map((stat, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.15 }}
+                            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center"
+                        >
+                            <div className="text-3xl font-bold">{stat.value}</div>
+                            <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            {/* FEATURES */}
+            <section className="py-20 px-6">
+                <div className="text-center mb-14">
+                    <h2 className="text-4xl font-black mb-4">
+                        Intelligent Features for Modern Institutions
+                    </h2>
+                    <p className="text-gray-400 max-w-xl mx-auto">
+                        AI-driven automation designed to enhance campus efficiency.
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    {features.map((feature, i) => {
+                        const Icon = feature.icon;
+                        return (
+                            <motion.div
+                                key={i}
+                                whileHover={{ y: -8 }}
+                                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center"
+                            >
+                                <Icon className="mx-auto mb-4 text-violet-400" size={30} />
+                                <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                                <p className="text-gray-400 text-sm">{feature.desc}</p>
+                            </motion.div>
+                        );
+                    })}
+                </div>
+            </section>
+
+            {/* DASHBOARD PREVIEW */}
+            <section className="py-20 px-6">
+                <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 text-center">
+                    <h3 className="text-2xl font-bold mb-8">
+                        Real-Time Dashboard Insights
+                    </h3>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {[
+                            { label: "Attendance Rate", value: "93%" },
+                            { label: "Average CGPA", value: "8.9" },
+                            { label: "Fee Collection", value: "₹4.6Cr" },
+                            { label: "Active Courses", value: "186" },
+                        ].map((item, i) => (
+                            <div key={i} className="bg-white/5 rounded-2xl p-6">
+                                <div className="text-2xl font-bold text-violet-400">
+                                    {item.value}
+                                </div>
+                                <div className="text-xs text-gray-400 mt-2">
+                                    {item.label}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ROLE SELECTION */}
+            <section id="roles-section" className="py-24 px-6">
+                <h2 className="text-4xl font-black text-center mb-14">
+                    Access Your Dashboard
+                </h2>
+
+                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    {roles.map((role) => {
                         const Icon = role.icon;
                         const isHovered = hovered === role.id;
                         const isSelected = selected === role.id;
@@ -122,95 +208,42 @@ export default function RoleSelectPage() {
                         return (
                             <motion.button
                                 key={role.id}
-                                initial={{ opacity: 0, y: 40 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 + i * 0.15, duration: 0.5, ease: 'easeOut' }}
-                                whileHover={{ y: -8, scale: 1.02 }}
+                                whileHover={{ y: -8 }}
                                 whileTap={{ scale: 0.97 }}
                                 onHoverStart={() => setHovered(role.id)}
                                 onHoverEnd={() => setHovered(null)}
                                 onClick={() => handleSelect(role.id)}
-                                className="relative text-left rounded-3xl p-8 cursor-pointer overflow-hidden group"
+                                className="relative rounded-3xl p-8 text-left"
                                 style={{
-                                    background: isHovered || isSelected
-                                        ? 'rgba(255,255,255,0.08)'
-                                        : 'rgba(255,255,255,0.04)',
-                                    border: isHovered || isSelected
-                                        ? `1px solid ${role.id === 'admin' ? 'rgba(124,58,237,0.6)' : 'rgba(249,115,22,0.6)'}`
-                                        : '1px solid rgba(255,255,255,0.08)',
-                                    boxShadow: isHovered || isSelected
-                                        ? `0 20px 60px ${role.glow.replace('0.5', '0.3')}, inset 0 1px 0 rgba(255,255,255,0.1)`
-                                        : '0 4px 24px rgba(0,0,0,0.3)',
+                                    background: 'rgba(255,255,255,0.05)',
+                                    border: '1px solid rgba(255,255,255,0.1)',
                                     backdropFilter: 'blur(20px)',
-                                    transition: 'all 0.3s ease',
                                 }}
                             >
-                                {/* Background gradient on hover */}
-                                <motion.div
-                                    animate={{ opacity: isHovered || isSelected ? 1 : 0 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="absolute inset-0 rounded-3xl"
-                                    style={{ background: `radial-gradient(ellipse at top left, ${role.glow.replace('0.5', '0.12')} 0%, transparent 60%)` }}
-                                />
+                                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                                    style={{ background: role.gradient }}>
+                                    <Icon size={28} />
+                                </div>
 
-                                {/* Icon */}
-                                <motion.div
-                                    animate={{ scale: isHovered ? 1.1 : 1, rotate: isHovered ? 5 : 0 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-xl relative"
-                                    style={{ background: role.gradient, boxShadow: isHovered ? `0 8px 32px ${role.glow}` : `0 4px 16px ${role.glow.replace('0.5', '0.3')}` }}
-                                >
-                                    <Icon size={30} className="text-white" strokeWidth={1.8} />
-                                </motion.div>
+                                <h3 className="text-2xl font-bold mb-2">{role.label}</h3>
+                                <p className="text-gray-400 text-sm mb-6">{role.sub}</p>
 
-                                {/* Label */}
-                                <h2 className="text-2xl font-bold text-white mb-2 relative">{role.label}</h2>
-                                <p className="text-sm text-gray-400 mb-6 leading-relaxed relative">{role.sub}</p>
-
-                                {/* Features */}
-                                <div className="space-y-2 relative mb-6">
+                                <div className="space-y-2 mb-6">
                                     {role.features.map(f => (
-                                        <div key={f} className="flex items-center gap-2 text-sm text-gray-300">
-                                            <div className="w-1.5 h-1.5 rounded-full"
-                                                style={{ background: role.id === 'admin' ? '#a78bfa' : '#fb923c' }} />
-                                            {f}
-                                        </div>
+                                        <div key={f} className="text-sm text-gray-300">• {f}</div>
                                     ))}
                                 </div>
 
-                                {/* CTA */}
-                                <motion.div
-                                    animate={{ x: isHovered ? 4 : 0 }}
-                                    transition={{ duration: 0.2 }}
-                                    className="flex items-center gap-2 font-semibold text-sm relative"
-                                    style={{ color: role.id === 'admin' ? '#a78bfa' : '#fb923c' }}
-                                >
-                                    {isSelected ? (
-                                        <span className="flex items-center gap-2">
-                                            <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                                            </svg>
-                                            Redirecting...
-                                        </span>
-                                    ) : (
-                                        <>Continue as {role.label} <ArrowRight size={16} /></>
-                                    )}
-                                </motion.div>
+                                <div className="font-semibold text-sm"
+                                    style={{ color: role.id === 'admin' ? '#a78bfa' : '#fb923c' }}>
+                                    {isSelected ? "Redirecting..." : `Continue as ${role.label}`}
+                                </div>
                             </motion.button>
                         );
                     })}
                 </div>
+            </section>
 
-                {/* Footer note */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7 }}
-                    className="text-center text-xs text-gray-600 mt-10"
-                >
-                </motion.p>
-            </div>
         </div>
     );
 }

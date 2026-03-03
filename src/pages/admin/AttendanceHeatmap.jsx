@@ -34,7 +34,7 @@ const AttendanceHeatmap = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h2 className="text-4xl font-black tracking-tighter text-engineering-white mb-2 uppercase">
-                        ATTENDANCE <span className="text-lemon-green italic">HEATMAP</span>
+                        ATTENDANCE <span className="text-lemon-green italic">STATUS</span>
                     </h2>
                     <div className="flex items-center gap-4 text-xs font-bold text-engineering-white/40 uppercase tracking-widest">
                         <span className="flex items-center gap-2 pt-1"><Activity size={14} className="text-lemon-green" /> ENGINEERING UNIV 75% MANDATORY</span>
@@ -45,11 +45,11 @@ const AttendanceHeatmap = () => {
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-2">
                             <div className="w-3 h-3 rounded-sm bg-red-500" />
-                            <span className="text-[10px] font-bold text-engineering-white/60 tracking-widest uppercase">Critical (&lt;75%)</span>
+                            <span className="text-[10px] font-bold text-engineering-white/60 tracking-widest uppercase">Below 75%</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <div className="w-3 h-3 rounded-sm bg-lemon-green" />
-                            <span className="text-[10px] font-bold text-engineering-white/60 tracking-widest uppercase">Compliant (&gt;75%)</span>
+                            <span className="text-[10px] font-bold text-engineering-white/60 tracking-widest uppercase">Normal (&gt;75%)</span>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ const AttendanceHeatmap = () => {
                 {/* Heatmap Section */}
                 <div className="lg:col-span-2 engineering-glass p-8">
                     <div className="flex items-center justify-between mb-8">
-                        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-lemon-green">Weekly Laboratory Utilization</h3>
+                        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-lemon-green">Weekly Lab Attendance</h3>
                         <button className="text-[10px] font-black text-engineering-white/40 uppercase tracking-widest flex items-center gap-2 hover:text-lemon-green transition-colors">
                             <Layers size={14} /> Full Log
                         </button>
@@ -113,7 +113,7 @@ const AttendanceHeatmap = () => {
                     </div>
 
                     <div className="engineering-glass p-8 border-none bg-white/5">
-                        <h3 className="text-xs font-black text-engineering-white/40 uppercase tracking-[0.2em] mb-6">Course Compliance</h3>
+                        <h3 className="text-xs font-black text-engineering-white/40 uppercase tracking-[0.2em] mb-6">Course Attendance Summary</h3>
                         <div className="space-y-4">
                             {[
                                 { name: 'DBMS Lab', val: '88%', status: 'Normal' },

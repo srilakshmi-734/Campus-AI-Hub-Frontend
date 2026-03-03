@@ -171,7 +171,7 @@ export default function Sidebar({ collapsed, setCollapsed, mobileOpen, onMobileC
                     >
                         {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
                         {!collapsed && (
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] ml-3">Collapse View</span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] ml-3">Minimize Menu</span>
                         )}
                     </button>
                 </div>

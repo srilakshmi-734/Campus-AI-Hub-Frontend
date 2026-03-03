@@ -16,7 +16,7 @@ export default function Footer() {
                         <span className="font-black text-xl tracking-tighter text-white uppercase italic block">
                             Campus<span className="text-lemon-green">AI</span> Hub
                         </span>
-                        <span className="text-[9px] font-black text-engineering-white/30 uppercase tracking-[0.3em]">Institutional Node Alpha</span>
+                        <span className="text-[9px] font-black text-engineering-white/30 uppercase tracking-[0.3em]">Campus Hub Portal</span>
                     </div>
                 </div>
 
@@ -29,13 +29,13 @@ export default function Footer() {
                     </div>
                     <div className="flex items-center gap-2">
                         <Globe size={10} className="text-lemon-green" />
-                        <span>Centralized Governance Protocol</span>
+                        <span>Main Institutional Portal</span>
                     </div>
                 </div>
 
                 {/* Social Links Section */}
                 <div className="flex items-center gap-8">
-                    {['X-Corp', 'LinkedIn', 'Terminal'].map((platform) => (
+                    {['Support', 'LinkedIn', 'About'].map((platform) => (
                         <motion.a
                             key={platform}
                             href={`#${platform.toLowerCase()}`}

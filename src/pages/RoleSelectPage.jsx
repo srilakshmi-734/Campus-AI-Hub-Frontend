@@ -98,7 +98,7 @@ export default function RoleSelectPage() {
               Campus<span className="text-lemon-green">AI</span> Hub
             </span>
             <span className="text-[9px] font-black text-lemon-green/50 uppercase tracking-[0.4em]">
-              Administration Suite V4
+              Campus Portal V4
             </span>
           </div>
         </div>
@@ -128,8 +128,8 @@ export default function RoleSelectPage() {
               <div className="text-[12vw] md:text-[9vw] lg:text-[8vw] text-white">
                 CAMPUS<span className="text-lemon-green">AI</span>
               </div>
-              <div className="text-[2.2vw] md:text-[1.8vw] tracking-[0.4em] mt-4 opacity-60">
-                HUB
+              <div className="text-[2.2vw] md:text-[1.8vw] tracking-[0.4em] mt-4 opacity-60 uppercase italic font-bold">
+                Student & Faculty Hub
               </div>
             </h1>
 
@@ -158,10 +158,10 @@ export default function RoleSelectPage() {
 
             <div className="text-center mb-16 space-y-4">
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic text-white">
-                Select <span className="text-lemon-green">Login Mode</span>
+                Choose <span className="text-lemon-green">Your Portal</span>
               </h2>
               <p className="text-engineering-white/40 text-[10px] uppercase font-black tracking-[0.4em]">
-                Please log in to access your portal
+                Select your role to login
               </p>
             </div>
 
@@ -213,7 +213,7 @@ export default function RoleSelectPage() {
             </h1>
             <div className="w-20 h-1.5 bg-lemon-green mx-auto mb-10 rounded-full" />
             <p className="text-engineering-white/50 text-base md:text-xl max-w-2xl mx-auto font-bold leading-relaxed uppercase tracking-tight italic">
-              Powered by AI, designed for Gen Z students across Tamil Nadu engineering colleges.
+              Designed for modern students and faculty across engineering colleges.
             </p>
           </Reveal>
         </section>

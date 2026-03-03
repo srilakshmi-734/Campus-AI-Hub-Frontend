@@ -64,16 +64,16 @@ const EngineeringDashboard = () => {
             <div className="flex justify-between items-end">
                 <div>
                     <h2 className="text-4xl font-black tracking-tighter text-engineering-white mb-2 uppercase">
-                        INSTITUTIONAL <span className="text-lemon-green italic">OVERVIEW</span>
+                        CAMPUS <span className="text-lemon-green italic">OVERVIEW</span>
                     </h2>
                     <div className="flex items-center gap-4 text-xs font-bold text-engineering-white/40 uppercase tracking-widest">
-                        <span className="flex items-center gap-2 pt-1"><Cpu size={14} className="text-lemon-green" /> Operational Intelligence Matrix</span>
-                        <span>Update: Live Status</span>
+                        <span className="flex items-center gap-2 pt-1"><Cpu size={14} className="text-lemon-green" /> Real-time System Status</span>
+                        <span>Update: Online</span>
                     </div>
                 </div>
                 <div className="hidden sm:flex gap-2">
                     <button className="px-4 py-2 engineering-glass border-none bg-white/5 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
-                        Generate NIRF
+                        Ranking Reports
                     </button>
                     <button className="px-4 py-2 bg-lemon-green text-engineering-black text-[10px] font-bold uppercase tracking-widest hover:shadow-[0_0_20px_rgba(188,240,0,0.4)] transition-all">
                         Real-time Sync
@@ -93,7 +93,7 @@ const EngineeringDashboard = () => {
                 {/* Main Chart */}
                 <div className="lg:col-span-2 engineering-glass p-8">
                     <div className="flex justify-between items-center mb-8">
-                        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-lemon-green">Department Revenue Analytics</h3>
+                        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-lemon-green">Department Students & Fees</h3>
                         <div className="flex gap-4">
                             <div className="flex items-center gap-2 text-[10px] text-engineering-white/50 uppercase font-black">
                                 <div className="w-2 h-2 rounded-full bg-lemon-green" /> Revenue
@@ -174,7 +174,7 @@ const EngineeringDashboard = () => {
                     <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
                         <Zap size={120} />
                     </div>
-                    <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-lemon-green mb-6">Placement Trend vNIRF</h3>
+                    <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-lemon-green mb-6">Placement Statistics</h3>
                     <div className="h-[200px]">
                         <ResponsiveContainer width="100%" height="100%">
                             <AreaChart data={data}>
@@ -197,10 +197,10 @@ const EngineeringDashboard = () => {
                 <div className="engineering-glass p-8 border-none bg-lemon-green text-engineering-black">
                     <div className="flex items-center gap-3 mb-6">
                         <ShieldCheck size={28} />
-                        <h3 className="font-black text-xl tracking-tighter uppercase italic">Institutional Standards</h3>
+                        <h3 className="font-black text-xl tracking-tighter uppercase italic">Compliance Status</h3>
                     </div>
                     <p className="text-sm font-bold opacity-80 mb-6 leading-relaxed">
-                        All academic protocols are being followed. Engineering University 75% attendance criteria and laboratory safety standards for the current semester are being monitored.
+                        All campus activities are being monitored. Engineering University 75% attendance criteria and laboratory safety protocols for the current semester are active.
                     </p>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="bg-black/10 p-4 rounded-xl">

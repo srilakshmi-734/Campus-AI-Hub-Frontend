@@ -7,14 +7,14 @@ import { Brain, Eye, EyeOff, ShieldCheck, GraduationCap, ArrowRight, ArrowLeft, 
 
 const roleConfig = {
     admin: {
-        label: 'Institutional Admin',
+        label: 'Admin Login',
         Icon: ShieldCheck,
         color: '#BCF000',
         gradient: 'linear-gradient(135deg, #BCF000 0%, #8FB600 100%)',
         glow: 'rgba(188,240,0,0.3)',
         placeholder: 'admin@engineering.edu',
         namePlaceholder: 'Full Name',
-        node: 'ADMIN-PORTAL'
+        node: 'ADMIN'
     },
     student: {
         label: 'Engineering Student',
@@ -24,7 +24,7 @@ const roleConfig = {
         glow: 'rgba(255,255,255,0.2)',
         placeholder: 'student@engineering.edu',
         namePlaceholder: 'Full Name',
-        node: 'STUDENT-PORTAL'
+        node: 'STUDENT'
     },
 };
 
@@ -119,7 +119,7 @@ export default function AuthPage() {
                     <h1 className="text-5xl font-black text-white mb-4 tracking-tighter uppercase italic leading-none">
                         Campus<span className="text-lemon-green italic">AI</span> Hub
                     </h1>
-                    <p className="text-lemon-green/50 mb-12 text-[10px] font-black uppercase tracking-[0.5em] italic">Campus Management System</p>
+                    <p className="text-lemon-green/50 mb-12 text-[10px] font-black uppercase tracking-[0.5em] italic">Campus Management Hub</p>
 
                     <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl mb-12 bg-white/5 border border-white/10 text-white text-xs font-black uppercase tracking-[0.2em] italic shadow-2xl backdrop-blur-md">
                         <config.Icon size={16} className="text-lemon-green" />
@@ -184,7 +184,7 @@ export default function AuthPage() {
                                 {mode === 'login' ? 'Login' : 'Create Account'}
                             </h2>
                             <p className="text-[10px] font-bold text-engineering-white/30 uppercase tracking-[0.3em] mt-2 italic">
-                                Portal: <span className="text-lemon-green">{config.node}</span>
+                                Campus <span className="text-lemon-green">{config.node}</span>
                             </p>
                         </div>
 

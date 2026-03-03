@@ -34,10 +34,10 @@ const StudentManagement = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h2 className="text-4xl font-black tracking-tighter text-engineering-white mb-2 uppercase">
-                        STUDENT <span className="text-lemon-green italic">CENTRAL</span>
+                        STUDENT <span className="text-lemon-green italic">DATABASE</span>
                     </h2>
                     <div className="flex items-center gap-4 text-xs font-bold text-engineering-white/40 uppercase tracking-widest">
-                        <span className="flex items-center gap-2 pt-1"><Users size={14} className="text-lemon-green" /> Total: 2,847 B.Tech Enrolled</span>
+                        <span className="flex items-center gap-2 pt-1"><Users size={14} className="text-lemon-green" /> Total: 2,847 Students Enrolled</span>
                         <span>Batch: 2021-2025</span>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ const StudentManagement = () => {
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2">
                                             <div className={`w-1.5 h-1.5 rounded-full ${student.status === 'Low Attendance' ? 'bg-red-500 animate-pulse' :
-                                                    student.status.includes('Lab') ? 'bg-lemon-green animate-pulse' : 'bg-blue-400'
+                                                student.status.includes('Lab') ? 'bg-lemon-green animate-pulse' : 'bg-blue-400'
                                                 }`} />
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-engineering-white/60">{student.status}</span>
                                         </div>
@@ -160,7 +160,7 @@ const StudentManagement = () => {
 
                 {/* Pagination */}
                 <div className="px-6 py-4 bg-white/5 flex items-center justify-between border-t border-white/10">
-                    <span className="text-[10px] font-bold text-engineering-white/40 uppercase tracking-widest">Showing 1-7 of 2,847 Engineering Records</span>
+                    <span className="text-[10px] font-bold text-engineering-white/40 uppercase tracking-widest">Showing 1-7 of 2,847 Student Records</span>
                     <div className="flex gap-2">
                         <button className="p-2 engineering-glass border-none bg-white/5 text-engineering-white/30 disabled:opacity-30" disabled>
                             <ChevronLeft size={16} />
